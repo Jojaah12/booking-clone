@@ -3,6 +3,7 @@ import Navbar from "../../components/navbar/Navbar";
 import Featured from "../../components/featured/Featured";
 import "./home.css";
 import PropertyList from "../../components/propertyList/PropertyList";
+import FeaturedProperty from "../../components/featuredProperties/FeaturedProperties";
 
 const Home = () => {
   return (
@@ -11,8 +12,10 @@ const Home = () => {
       <Header />
       <div className="homeContainer">
         <Featured />
-        <h1 className="homeTitle">Utforska Mer</h1>
+        <h1 className="homeTitle">Utforska olika typer av boenden</h1>
         <PropertyList />
+        <h1 className="homeTitle">Hus och hem som gästerna älskar</h1>
+        <FeaturedProperty />
       </div>
     </div>
   );
