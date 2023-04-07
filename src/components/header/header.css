@@ -1,5 +1,11 @@
 .header {
-  background-image: url('https://r-xx.bstatic.com/xdata/images/xphoto/2880x1116/208091804.jpg?k=94914d07b33a5650107203923da2a2c0343e87e4719d6370ffec26b1d04d2ade&o=');
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url('https://r-xx.bstatic.com/xdata/images/xphoto/2880x1116/208091804.jpg?k=94914d07b33a5650107203923da2a2c0343e87e4719d6370ffec26b1d04d2ade&o='),
+    linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -24,8 +30,14 @@
   gap: 40px;
   margin-bottom: 50px;
 }
+.headerListItem:hover {
+  border: 1px solid white;
+  padding: 8px;
+  border-radius: 15px;
+}
 
 .headerListItem {
+  cursor: pointer;
   display: flex;
   align-items: center;
   gap: 10px;
