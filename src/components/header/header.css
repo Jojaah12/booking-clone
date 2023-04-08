@@ -57,7 +57,18 @@
   background-color: #0071c2;
   color: white;
   padding: 10px;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: large;
+  border: none;
+  cursor: pointer;
+}
+
+.headerBtnSearch {
+  background-color: #0071c2;
+  color: white;
+  padding: 10px;
+  font-weight: 600;
+  font-size: 20px;
   border: none;
   cursor: pointer;
 }
@@ -85,7 +96,7 @@
 .headerSearchItem {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 16px;
 }
 
 .headerSearchInput {

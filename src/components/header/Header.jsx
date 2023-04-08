@@ -5,15 +5,15 @@ import {
   faPerson,
   faPlane,
   faTaxi,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
-import { DateRange } from "react-date-range";
-import "react-date-range/dist/styles.css"; // main css file
-import "react-date-range/dist/theme/default.css"; // theme css file
-import { format } from "date-fns";
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useState } from 'react';
+import { DateRange } from 'react-date-range';
+import 'react-date-range/dist/styles.css'; // main css file
+import 'react-date-range/dist/theme/default.css'; // theme css file
+import { format } from 'date-fns';
 
-import "./header.css";
+import './header.css';
 
 const Header = ({ type }) => {
   const [openDate, setOpenDate] = useState(false);
@@ -21,7 +21,7 @@ const Header = ({ type }) => {
     {
       startDate: new Date(),
       endDate: new Date(),
-      key: "selection",
+      key: 'selection',
     },
   ]);
   const [openOptions, setOpenOptions] = useState(false);
@@ -35,7 +35,8 @@ const Header = ({ type }) => {
     setOptions((prev) => {
       return {
         ...prev,
-        [name]: operation === "i" ? options[name] + 1 : options[name] - 1,
+        [name]:
+          operation === 'i' ? options[name] + 1 : options[name] - 1,
       };
     });
   };
@@ -44,7 +45,9 @@ const Header = ({ type }) => {
     <div className="header">
       <div
         className={
-          type === "list" ? "headerContainer listMode" : "headerContainer"
+          type === 'list'
+            ? 'headerContainer listMode'
+            : 'headerContainer'
         }
       >
         <div className="headerList">
@@ -69,19 +72,24 @@ const Header = ({ type }) => {
             <span>Flygtaxi</span>
           </div>
         </div>
-        {type !== "list" && (
+        {type !== 'list' && (
           <>
             <h1 className="headerTitle">
               Vill du ha rabatter livet ut? Det får du med Genius.
             </h1>
             <p className="headerDesc">
-              Res och få förmåner – med ett gratis Booking.com-konto får du
-              tillgång till rabatter på minst 10 % direkt.
+              Res och få förmåner – med ett gratis Booking.com-konto
+              får du tillgång till rabatter på minst 10 % direkt.
             </p>
-            <button className="headerBtn">Logga in/skapa ett konto</button>
+            <button className="headerBtn">
+              Logga in/skapa ett konto
+            </button>
             <div className="headerSearch">
               <div className="headerSearchItem">
-                <FontAwesomeIcon icon={faBed} className="headerIcon" />
+                <FontAwesomeIcon
+                  icon={faBed}
+                  className="headerIcon"
+                />
                 <input
                   type="text"
                   placeholder="Vart vill du åka?"
@@ -89,14 +97,17 @@ const Header = ({ type }) => {
                 />
               </div>
               <div className="headerSearchItem">
-                <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" />
+                <FontAwesomeIcon
+                  icon={faCalendarDays}
+                  className="headerIcon"
+                />
                 <span
                   onClick={() => setOpenDate(!openDate)}
                   className="headerSearchText"
-                >{`${format(date[0].startDate, "dd/MM/yyyy")} - ${format(
-                  date[0].endDate,
-                  "dd/MM/yyyy"
-                )}`}</span>
+                >{`${format(
+                  date[0].startDate,
+                  'dd/MM/yyyy'
+                )} - ${format(date[0].endDate, 'dd/MM/yyyy')}`}</span>
                 {openDate && (
                   <DateRange
                     editableDateInputs={true}
@@ -108,7 +119,10 @@ const Header = ({ type }) => {
                 )}
               </div>
               <div className="headerSearchItem">
-                <FontAwesomeIcon icon={faPerson} className="headerIcon" />
+                <FontAwesomeIcon
+                  icon={faPerson}
+                  className="headerIcon"
+                />
                 <span
                   onClick={() => setOpenOptions(!openOptions)}
                   className="headerSearchText"
@@ -121,7 +135,7 @@ const Header = ({ type }) => {
                         <button
                           disabled={options.vuxna <= 1}
                           className="optionCounterButton"
-                          onClick={() => handleOption("vuxna", "d")}
+                          onClick={() => handleOption('vuxna', 'd')}
                         >
                           -
                         </button>
@@ -130,7 +144,7 @@ const Header = ({ type }) => {
                         </span>
                         <button
                           className="optionCounterButton"
-                          onClick={() => handleOption("vuxna", "i")}
+                          onClick={() => handleOption('vuxna', 'i')}
                         >
                           +
                         </button>
@@ -142,7 +156,7 @@ const Header = ({ type }) => {
                         <button
                           disabled={options.barn <= 0}
                           className="optionCounterButton"
-                          onClick={() => handleOption("barn", "d")}
+                          onClick={() => handleOption('barn', 'd')}
                         >
                           -
                         </button>
@@ -151,7 +165,7 @@ const Header = ({ type }) => {
                         </span>
                         <button
                           className="optionCounterButton"
-                          onClick={() => handleOption("barn", "i")}
+                          onClick={() => handleOption('barn', 'i')}
                         >
                           +
                         </button>
@@ -163,7 +177,7 @@ const Header = ({ type }) => {
                         <button
                           disabled={options.rum <= 1}
                           className="optionCounterButton"
-                          onClick={() => handleOption("rum", "d")}
+                          onClick={() => handleOption('rum', 'd')}
                         >
                           -
                         </button>
@@ -172,7 +186,7 @@ const Header = ({ type }) => {
                         </span>
                         <button
                           className="optionCounterButton"
-                          onClick={() => handleOption("rum", "i")}
+                          onClick={() => handleOption('rum', 'i')}
                         >
                           +
                         </button>
@@ -182,7 +196,7 @@ const Header = ({ type }) => {
                 )}
               </div>
               <div className="headerSearchItem">
-                <button className="headerBtn">Sök</button>
+                <button className="headerBtnSearch">Sök</button>
               </div>
             </div>
           </>
