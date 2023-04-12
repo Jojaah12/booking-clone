@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import './LoginPage.css'; // import your CSS file
 
 function LoginPage() {
   const [loginInfo, setLoginInfo] = useState({
@@ -13,30 +14,34 @@ function LoginPage() {
   };
 
   return (
-    <div>
+    <div className="form-container">
       <h1>Login Page</h1>
       <form onSubmit={handleLogin}>
-        <label>
-          Username:
+        <div className="form-group">
+          <label className="form-label">Username:</label>
           <input
             type="text"
             value={loginInfo.username}
             onChange={(e) =>
               setLoginInfo({ ...loginInfo, username: e.target.value })
             }
+            className="form-input"
           />
-        </label>
-        <label>
-          Password:
+        </div>
+        <div className="form-group">
+          <label className="form-label">Password:</label>
           <input
             type="password"
             value={loginInfo.password}
             onChange={(e) =>
               setLoginInfo({ ...loginInfo, password: e.target.value })
             }
+            className="form-input"
           />
-        </label>
-        <button type="submit">Login</button>
+        </div>
+        <button type="submit" className="form-submit">
+          Login
+        </button>
       </form>
     </div>
   );
