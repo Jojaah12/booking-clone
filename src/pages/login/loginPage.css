@@ -15,12 +15,14 @@
   background-color: #0171c2;
   padding: 20px;
   width: 400px;
+  animation: slide-in 0.5s ease-in-out;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
+  animation: slide-up 0.5s ease-in-out;
 }
 
 .form-label {
@@ -33,6 +35,14 @@
   font-size: 16px;
   border-radius: 5px;
   border: 1px solid #ccc;
+  transition: border-color 0.3s ease-in-out;
+  animation: input-scale 0.5s ease-in-out;
+}
+
+.form-input:focus {
+  border-color: #0077ff;
+  outline: none;
+  animation: input-glow 0.5s ease-in-out alternate;
 }
 
 .form-submit {
@@ -43,14 +53,50 @@
   background-color: #0077ff;
   color: #fff;
   cursor: pointer;
+  animation: button-scale 0.5s ease-in-out;
 }
 
-.form-submit:hover {
-  background-color: #0055cc;
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
-.error-message {
-  color: #ff0000;
-  font-size: 14px;
-  margin-top: 5px;
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes input-scale {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes button-scale {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes input-glow {
+  from {
+    box-shadow: none;
+  }
+  to {
+    box-shadow: 0 0 10px #0077ff;
+  }
 }
