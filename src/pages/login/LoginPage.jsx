@@ -1,44 +1,45 @@
 import React, { useState } from 'react';
-import './loginPage.css'; // import your CSS file
+import './loginPage.css';
 
 function LoginPage() {
-  const [loginInfo, setLoginInfo] = useState({
-    username: '',
-    password: '',
-  });
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
-  const handleLogin = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Logging in with:', loginInfo);
-    // TODO: Implement the actual login logic here
+    // Add your login logic here
   };
 
   return (
-    <div className="form-container">
-      <h1>Login Page</h1>
-      <form onSubmit={handleLogin}>
+    <div className="container">
+      <form className="form-container" onSubmit={handleSubmit}>
+        <h2>Login</h2>
         <div className="form-group">
-          <label className="form-label">Username:</label>
+          <label htmlFor="email" className="form-label">
+            Email
+          </label>
           <input
-            type="text"
-            value={loginInfo.username}
-            onChange={(e) =>
-              setLoginInfo({ ...loginInfo, username: e.target.value })
-            }
+            type="email"
+            id="email"
             className="form-input"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <div className="form-group">
-          <label className="form-label">Password:</label>
+          <label htmlFor="password" className="form-label">
+            Password
+          </label>
           <input
             type="password"
-            value={loginInfo.password}
-            onChange={(e) =>
-              setLoginInfo({ ...loginInfo, password: e.target.value })
-            }
+            id="password"
             className="form-input"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </div>
+        {error && <p className="error-message">{error}</p>}
         <button type="submit" className="form-submit">
           Login
         </button>
