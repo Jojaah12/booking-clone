@@ -9,11 +9,15 @@ const Navbar = () => {
         <div className="navItems">
           {/* <button className="navButton-blue">Registrera ditt boende</button> */}
           <button className="navButton">
-            <Link to="/login">Skapa konto</Link>
+            <Link to="/login" className="navButtonLink">
+              Skapa konto
+            </Link>
           </button>
-          <Link className="button button-link" to="/login">
-            Logga in
-          </Link>
+          <button className="navButton">
+            <Link to="/login" className="navButtonLink">
+              Logga in
+            </Link>
+          </button>
         </div>
       </div>
     </div>

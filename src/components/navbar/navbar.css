@@ -26,11 +26,11 @@
   border: none;
   padding: 5px 10px;
   cursor: pointer;
-  color: #0071c2;
   font-weight: 600;
 }
 
-.button-link {
+.navButtonLink {
+  text-decoration: none;
   color: #0071c2;
 }
 

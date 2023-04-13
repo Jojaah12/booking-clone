@@ -14,6 +14,7 @@ import 'react-date-range/dist/theme/default.css'; // theme css file
 import { format } from 'date-fns';
 
 import './header.css';
+import { Link } from 'react-router-dom';
 
 const Header = ({ type }) => {
   const [openDate, setOpenDate] = useState(false);
@@ -82,7 +83,9 @@ const Header = ({ type }) => {
               får du tillgång till rabatter på minst 10 % direkt.
             </p>
             <button className="headerBtn">
-              Logga in/skapa ett konto
+              <Link to="login" className="headerBtnLink">
+                Logga in/skapa ett konto
+              </Link>
             </button>
             <div className="headerSearch">
               <div className="headerSearchItem">
