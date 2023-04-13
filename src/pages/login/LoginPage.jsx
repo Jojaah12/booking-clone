@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './LoginPage.css'; // import your CSS file
+import './loginPage.css'; // import your CSS file
 
 function LoginPage() {
   const [loginInfo, setLoginInfo] = useState({
