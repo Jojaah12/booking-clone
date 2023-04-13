@@ -30,6 +30,10 @@
   font-weight: 600;
 }
 
+.button-link {
+  color: #0071c2;
+}
+
 .navButton-blue {
   color: white;
   background-color: #003580;
