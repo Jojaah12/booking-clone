@@ -1,51 +1,70 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './loginPage.css';
 
-function LoginPage() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+function SignInForm() {
+  const [state, setState] = useState({
+    email: '',
+    password: '',
+  });
+  const handleChange = (evt) => {
+    const value = evt.target.value;
+    setState({
+      ...state,
+      [evt.target.name]: value,
+    });
+  };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Add your login logic here
+  const handleOnSubmit = (evt) => {
+    evt.preventDefault();
+
+    const { email, password } = state;
+    alert(
+      `You are login with email: ${email} and password: ${password}`
+    );
+
+    for (const key in state) {
+      setState({
+        ...state,
+        [key]: '',
+      });
+    }
   };
 
   return (
-    <div className="container">
-      <form className="form-container" onSubmit={handleSubmit}>
-        <h2>Login</h2>
-        <div className="form-group">
-          <label htmlFor="email" className="form-label">
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            className="form-input"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
+    <div className="form-container sign-in-container">
+      <form onSubmit={handleOnSubmit}>
+        <h1>Sign in</h1>
+        <div className="social-container">
+          <a href="#" className="social">
+            <i className="fab fa-facebook-f" />
+          </a>
+          <a href="#" className="social">
+            <i className="fab fa-google-plus-g" />
+          </a>
+          <a href="#" className="social">
+            <i className="fab fa-linkedin-in" />
+          </a>
         </div>
-        <div className="form-group">
-          <label htmlFor="password" className="form-label">
-            Password
-          </label>
-          <input
-            type="password"
-            id="password"
-            className="form-input"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        {error && <p className="error-message">{error}</p>}
-        <button type="submit" className="form-submit">
-          Login
-        </button>
+        <span>or use your account</span>
+        <input
+          type="email"
+          placeholder="Email"
+          name="email"
+          value={state.email}
+          onChange={handleChange}
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          value={state.password}
+          onChange={handleChange}
+        />
+        <a href="#">Forgot your password?</a>
+        <button>Sign In</button>
       </form>
     </div>
   );
 }
 
-export default LoginPage;
+export default SignInForm;
