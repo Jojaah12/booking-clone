@@ -11,17 +11,17 @@ const Home = () => {
     <div>
       <Navbar />
       <Header />
+      <div className="check-box">
+        <label>
+          <input type="checkbox" />
+          Jag letar efter ett helt hus eller en hel lägenhet
+        </label>
+        <label>
+          <input type="checkbox" />
+          Jag reser i jobbet
+        </label>
+      </div>
       <div className="homeContainer">
-        <div className="check-box">
-          <label>
-            <input type="checkbox" />
-            Jag letar efter ett helt hus eller en hel lägenhet
-          </label>
-          <label>
-            <input type="checkbox" />
-            Jag reser i jobbet
-          </label>
-        </div>
         <Featured />
         <Featured />
         <h1 className="homeTitle">Utforska olika typer av boenden</h1>
